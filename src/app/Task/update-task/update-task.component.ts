@@ -29,21 +29,21 @@ export class UpdateTaskComponent implements OnInit {
       }, error => console.log(error));
   }
 
-  updateEmployee() {
+  updateEmployee(email:string) {
     this.taskService.updateTask(this.uniqueTaskId, this.task)
       .subscribe(data => {
         console.log(data);
         this.task = new Task();
-        this.gotoList();
+        this.gotoList(email);
       }, error => console.log(error));
   }
 
-  onSubmit() {
-    this.updateEmployee();
+  onSubmit(email:string) {
+    this.updateEmployee(email);
   }
 
-  gotoList() {
-    this.router.navigate(['/list']);
+  gotoList(email:string) {
+    this.router.navigate(['/list',email]);
   }
 
 }

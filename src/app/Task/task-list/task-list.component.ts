@@ -39,4 +39,10 @@ export class TaskListComponent implements OnInit {
   {
     this.router.navigate(['/find', uniqueTaskId]);
   }
+
+  createTask()
+  {
+    this.router.navigate(['create']);
+  }
+
 }

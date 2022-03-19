@@ -11,7 +11,8 @@ import {Task} from "../../model/task";
 export class TaskDetailsComponent implements OnInit {
 
   uniqueTaskId: number =0;
-  task: Task | undefined;
+  // @ts-ignore
+  task: Task ;
 
   constructor(private route: ActivatedRoute,private router: Router,
               private taskService: TaskService) { }
@@ -28,8 +29,9 @@ export class TaskDetailsComponent implements OnInit {
       })
   }
 
-  list(){
-    this.router.navigate(['/list']);
+  list(email:string){
+    this.router.navigate(['list',email]);
   }
+
 
 }

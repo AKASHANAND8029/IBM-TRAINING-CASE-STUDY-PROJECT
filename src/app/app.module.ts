@@ -17,6 +17,7 @@ import {UpdateStatusComponent} from "./user-page/update-status/update-status.com
 import {UserHomepageComponent} from "./user-page/user-homepage/user-homepage.component";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import {UserHomepageComponent} from "./user-page/user-homepage/user-homepage.com
     LoginComponent,
     UpdateStatusComponent,
     UserHomepageComponent
+
   ],
   imports: [
     BrowserModule,

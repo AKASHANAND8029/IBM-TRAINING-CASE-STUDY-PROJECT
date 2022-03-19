@@ -1,0 +1,17 @@
+.logout{
+  position:absolute;
+  top:1cm;
+  right:3cm;
+}
+
+.grad1 {
+
+  height: 700px;
+   background-color: #000428; /* For browsers that do not support gradients */
+   background-image: linear-gradient(to right, #000428 , #004e92);
+ }
+
+  .heading{
+    color: aliceblue;
+  }
+

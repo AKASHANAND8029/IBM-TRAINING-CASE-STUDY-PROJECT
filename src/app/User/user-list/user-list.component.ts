@@ -35,4 +35,8 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['user-find', email]);
   }
 
+  createUser(){
+    this.router.navigate(['user-create']);
+  }
+
 }
