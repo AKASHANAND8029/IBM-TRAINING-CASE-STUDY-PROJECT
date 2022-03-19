@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
 import {Task} from "../../model/task";
 import {TaskService} from "../TaskService/task.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-task-list',
@@ -10,20 +10,24 @@ import {Router} from "@angular/router";
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
+  email:string="";
   task: Observable<Task[]> | undefined;
-  constructor(private taskService: TaskService, private router:Router) {}
+  constructor(private route: ActivatedRoute,private taskService: TaskService, private router:Router) {}
 
   ngOnInit(): void {
-    this.reloadData();
+    this.email=this.route.snapshot.params['email'];
+
+    this.reloadData(this.email);
   }
-  private reloadData() {
-    this.task = this.taskService.getTaskList();
+  private reloadData(email:string) {
+
+    this.task = this.taskService.getTaskListByAssignedBy(this.email);
   }
 
   deleteTask(uniqueTaskId: number) {
     this.taskService.deleteTask(uniqueTaskId).subscribe(data => {
       console.log(data);
-      this.reloadData();
+      this.reloadData(this.email);
     }, error => console.log(error));
   }
 

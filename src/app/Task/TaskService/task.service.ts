@@ -8,6 +8,7 @@ import {Observable} from "rxjs";
 export class TaskService {
   private baseUrl = "http://localhost:9090";
   private deleteUrl = 'http://localhost:9090/delete';
+  private findUserUrl = "http://localhost:9090/find"
 
   constructor(private http: HttpClient) { }
 
@@ -29,5 +30,13 @@ export class TaskService {
 
   updateTask(id:number, value:any) : Observable<Object> {
     return this.http.put(`${this.baseUrl}/update/${id}`,value);
+  }
+
+  getTaskListByAssignedTo(email: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/findByAssignedTo/${email}`);
+  }
+
+  getTaskListByAssignedBy(email: string) : Observable<any>{
+    return  this.http.get<any>(`${this.baseUrl}/findByAssignedBy/${email}`);
   }
 }

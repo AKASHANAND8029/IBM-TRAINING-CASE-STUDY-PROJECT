@@ -19,22 +19,22 @@ export class CreateTaskComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  save() {
+  save(email:string) {
     this.taskService.createTask(this.task).subscribe(data => {
         this.task = new Task();
-        this.gotoList();
+        this.gotoList(email);
       },
       error => console.log(error));
   }
 
-  public gotoList() {
-    this.router.navigate(['/list']);
+  public gotoList(email:string) {
+    this.router.navigate(['/list',email]);
 
   }
 
-  onSubmit() {
+  onSubmit(email:string) {
     this.submitted=true;
-    this.save();
+    this.save(email);
   }
 
 }

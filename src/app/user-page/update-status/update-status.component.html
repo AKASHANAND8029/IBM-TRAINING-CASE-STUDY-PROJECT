@@ -1,0 +1,50 @@
+<h3>Update Task</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit(task.assignedTo)">
+    <div class="form-group">
+      <label for="taskName">Task Name</label>
+      <input type="text" class="form-control" id="taskName" required [(ngModel)]="task.taskName" name="taskName" disabled>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="taskDescription">Task Description</label>
+      <input type="text" class="form-control" id="taskDescription" required [(ngModel)]="task.taskDescription" name="taskDescription" disabled>
+    </div>
+    <br>
+
+
+    <div class="form-group">
+      <label for="completed">Completed</label>
+      <input type="text" class="form-control" id="completed" required [(ngModel)]="task.completed" name="completed" >
+    </div>
+    <br>
+
+
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input type="text" class="form-control" id="startDate" required [(ngModel)]="task.startDate" name="startDate" disabled>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input type="text" class="form-control" id="endDate" required [(ngModel)]="task.endDate" name="endDate" disabled>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="assignedBy">Assigned By</label>
+      <input type="text" class="form-control" id="assignedBy" required [(ngModel)]="task.assignedBy" name="assignedBy" disabled>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="assignedTo">Assigned To</label>
+      <input type="text" class="form-control" id="assignedTo" required [(ngModel)]="task.assignedTo" name="assignedTo" disabled>
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

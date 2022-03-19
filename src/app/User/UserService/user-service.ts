@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {User} from "../../model/user";
 
 @Injectable({
   providedIn: 'root'
@@ -33,4 +34,7 @@ export class UserService {
   // updateTask(id:number, value:any) : Observable<Object> {
   //   return this.http.put(`${this.baseUrl}/update/${id}`,value);
   // }
+  loginUserFromRemote(user:User):Observable<any>{
+    return this.http.post<any>("http://localhost:9091/login",user);
+  }
 }

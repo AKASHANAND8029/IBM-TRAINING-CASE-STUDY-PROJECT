@@ -15,24 +15,20 @@ export class UserListComponent implements OnInit {
 
   user: Observable<User[]> | undefined;
   constructor(private userService : UserService, private router:Router) {}
-
-  ngOnInit(): void {
-    this.reloadData();
-  }
-  private reloadData() {
+  private reload() {
     this.user = this.userService.getUsersList();
   }
+  ngOnInit(): void {
+    this.reload();
+  }
+
 
   deleteUser(email:string) {
     this.userService.deleteUser(email).subscribe(data => {
       console.log(data);
-      this.reloadData();
+      this.reload();
     }, error => console.log(error));
   }
-
-  // updateTask(uniqueTaskId: number) {
-  //   this.router.navigate(['/update',uniqueTaskId]);
-  // }
 
  getUser(email:string)
   {

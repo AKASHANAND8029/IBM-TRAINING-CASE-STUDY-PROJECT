@@ -12,7 +12,10 @@ import { TaskDetailsComponent } from './Task/task-details/task-details.component
 import { CreateUserComponent } from './User/create-user/create-user.component';
 import { UserListComponent } from './User/user-list/user-list.component';
 import { UserDetailsComponent } from './User/user-details/user-details.component';
-import { LoginComponent } from './login/login/login.component';
+import {LoginComponent} from "./login/login.component";
+import {UpdateStatusComponent} from "./user-page/update-status/update-status.component";
+import {UserHomepageComponent} from "./user-page/user-homepage/user-homepage.component";
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { LoginComponent } from './login/login/login.component';
     CreateUserComponent,
     UserListComponent,
     UserDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    UpdateStatusComponent,
+    UserHomepageComponent
   ],
   imports: [
     BrowserModule,

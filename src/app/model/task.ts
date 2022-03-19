@@ -6,8 +6,8 @@ export class Task {
   public completed:boolean | undefined;
   public startDate:string | undefined;
   public endDate:string | undefined;
-  public assignedBy:string | undefined;
-  public assignedTo:string | undefined;
+  public assignedBy:string ="";
+  public assignedTo:string="";
   public actions: boolean | undefined;
 
 }
