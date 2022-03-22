@@ -29,6 +29,8 @@ displayed.
 ● USER(Employee): Employees as a user have restricted access only for
 updating the task status from true to false or vice versa. As a user, the employee
 will only be displayed all the tasks associated with him/her.
+
+
 All the database here are interconnected to each other and if any changes are made
 from the front end, it is made visible to all the users.
 This web application is also provided with login and logout functionality with restricted
